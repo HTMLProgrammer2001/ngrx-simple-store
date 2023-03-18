@@ -1,0 +1,9 @@
+<div class="books-wrapper">
+  <div class="books-list">
+    <div class="book-item" *ngFor="let book of booksState.books">
+      <img [src]="book.posterUrl" [title]="book.title" [alt]="book.title">
+      {{book.title}}
+    </div>
+  </div>
+  <div class="books-filter">Filter</div>
+</div>

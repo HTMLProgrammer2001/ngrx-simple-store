@@ -9,6 +9,13 @@ const port = process.env.PORT || 3000;
 
 const bookService = new BooksService();
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', '*');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  next();
+});
+
 app.get('/books', (req: Request, res: Response) => {
   const paginator: PaginatorRequest = {
     page: Number(req.query.page) || 1,
@@ -31,6 +38,15 @@ app.get('/books', (req: Request, res: Response) => {
 
 app.get('/books/:id', (req: Request, res: Response) => {
   res.json(bookService.getBookDetails(Number(req.params.id)));
+});
+
+app.get('/books/:id/reviews', (req: Request, res: Response) => {
+  const paginator: PaginatorRequest = {
+    page: Number(req.query.page) || 1,
+    size: Number(req.query.size) || 5
+  };
+
+  res.json(bookService.getBookReviewsPaginatedList(Number(req.params.id), paginator));
 });
 
 app.get('/authors', (req: Request, res: Response) => {

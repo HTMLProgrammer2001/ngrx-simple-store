@@ -6,7 +6,7 @@ import {
   BookDetailsResponse,
   BookGenreResponse,
   BookListResponse,
-  PaginatedResponse
+  PaginatedResponse, ReviewResponse
 } from '../types/response';
 import {isNil} from '../helpers';
 
@@ -91,10 +91,26 @@ export class BooksService {
         pages: book.pages,
         posterUrl: book.posterUrl,
         title: book.title,
-        reviews: book.reviews,
         reviewsCount: book.reviews.length
       };
     } else {
+      return null;
+    }
+  }
+
+  getBookReviewsPaginatedList(bookId: number, paginator: PaginatorRequest): PaginatedResponse<ReviewResponse> | null {
+    const book = this.books.find(el => el.id === bookId);
+
+    if (book) {
+      return {
+        page: paginator.page,
+        size: paginator.size,
+        totalElements: book.reviews.length,
+        totalPages: Math.ceil(book.reviews.length / paginator.size),
+        responseList: book.reviews.slice((paginator.page - 1) * paginator.size, paginator.page * paginator.size)
+      };
+    }
+    else {
       return null;
     }
   }

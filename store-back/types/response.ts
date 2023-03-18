@@ -42,7 +42,6 @@ export interface BookDetailsResponse {
   avgMark: number;
   author: BookAuthorResponse;
   genres: Array<BookGenreResponse>;
-  reviews: Array<ReviewResponse>;
 }
 
 export interface ReviewResponse {

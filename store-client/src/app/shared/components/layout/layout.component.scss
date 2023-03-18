@@ -1,0 +1,18 @@
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  app-header {
+    height: 60px;
+  }
+
+  #main {
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  app-footer {
+    height: 40px;
+  }
+}

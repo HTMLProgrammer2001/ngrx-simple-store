@@ -1,0 +1,19 @@
+.books-wrapper {
+  display: flex;
+  padding: 20px;
+
+  .books-list {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .book-item {
+      width: 200px;
+    }
+  }
+
+  .books-filter {
+    width: 25%;
+  }
+}
