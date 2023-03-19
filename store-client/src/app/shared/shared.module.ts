@@ -4,6 +4,7 @@ import {RouterModule} from '@angular/router';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {LayoutComponent} from './components/layout/layout.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -15,10 +16,14 @@ import {LayoutComponent} from './components/layout/layout.component';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule {

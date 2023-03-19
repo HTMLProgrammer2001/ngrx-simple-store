@@ -11,10 +11,13 @@ import {SharedModule} from './shared/shared.module';
 import {booksListFeatureKey, booksListReducer} from './state/features/books-list/books-list.reducer';
 import {BooksListEffects} from './state/features/books-list/books-list.effects';
 import {HttpClientModule} from '@angular/common/http';
+import {cartFeatureKey, cartReducer} from './state/features/cart/cart.reducer';
+import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
   ],
   imports: [
     SharedModule,
@@ -22,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      [booksListFeatureKey]: booksListReducer
+      [booksListFeatureKey]: booksListReducer,
+      [cartFeatureKey]: cartReducer
     }, {
       runtimeChecks: {
         strictStateImmutability: true,

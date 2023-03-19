@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {HeaderData, HeaderFacadeService} from '../../services/header.facade.service';
+import {HeaderFacadeService} from '../../services/header.facade.service';
 import {ReplaySubject, takeUntil} from 'rxjs';
+import {CartTotalData} from '../../../state/features/cart/cart.selectors';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import {ReplaySubject, takeUntil} from 'rxjs';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  public data: HeaderData = {
+  public data: CartTotalData = {
     totalPrice: 0,
     totalCount: 0
   };

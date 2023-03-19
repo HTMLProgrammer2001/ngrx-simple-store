@@ -1,7 +1,7 @@
 <header>
-  <span class="header-name">Book store</span>
+  <span class="header-name" [routerLink]="'/'">Book store</span>
 
-  <div class="header-content">
-    {{data.totalCount}} | {{data.totalPrice}}
+  <div class="header-content" [routerLink]="'/cart'">
+    {{data.totalPrice}} ({{data.totalCount}})
   </div>
 </header>

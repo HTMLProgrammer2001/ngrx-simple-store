@@ -1,0 +1,38 @@
+.books-wrapper {
+  display: flex;
+  padding: 20px;
+
+  .books-data {
+    width: 75%;
+
+    .books-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .books-load-more {
+      text-align: center;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .books-loading {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+
+  .books-filter {
+    width: 25%;
+  }
+}
+
+.books-initialization-error {
+  text-align: center;
+  color: red;
+}
+
+.books-initialization-loading {
+  text-align: center;
+}

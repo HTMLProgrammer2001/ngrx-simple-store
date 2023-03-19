@@ -1,0 +1,73 @@
+<form class="books-filter" [formGroup]="formGroup" (ngSubmit)="onFilterChange()">
+  <div class="books-filter-section">
+    <div class="books-filter-section-name">General</div>
+    <input type="text" placeholder="Title" formControlName="title">
+
+    <label>
+      <input
+        type="checkbox"
+        formControlName="available"
+      />
+
+      Available
+    </label>
+  </div>
+
+  <div class="books-filter-section" formArrayName="authors">
+    <div class="books-filter-section-name">Authors</div>
+
+    <label *ngFor="let author of filterData.authors; let i = index">
+      <input
+        type="checkbox"
+        [formControlName]="i"
+      />
+
+      {{author.name}}
+    </label>
+  </div>
+
+  <div class="books-filter-section" formArrayName="genres">
+    <div class="books-filter-section-name">Genres</div>
+
+    <label *ngFor="let genre of filterData.genres; let i = index">
+      <input
+        type="checkbox"
+        [formControlName]="i"
+      />
+
+      {{genre.name}}
+    </label>
+  </div>
+
+  <div class="books-filter-section">
+    <div class="books-filter-section-name">Price</div>
+    <input
+      type="number"
+      placeholder="Price from"
+      formControlName="priceFrom"
+    >
+
+    <input
+      type="number"
+      placeholder="Price to"
+      formControlName="priceTo"
+    >
+  </div>
+
+  <div class="books-filter-section">
+    <div class="books-filter-section-name">Mark</div>
+    <input
+      type="number"
+      placeholder="Mark from"
+      formControlName="markFrom"
+    >
+
+    <input
+      type="number"
+      placeholder="Mark to"
+      formControlName="markTo"
+    >
+  </div>
+
+  <button>Apply</button>
+</form>

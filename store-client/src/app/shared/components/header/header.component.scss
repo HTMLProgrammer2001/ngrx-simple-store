@@ -3,4 +3,8 @@ header {
   display: flex;
   justify-content: space-between;
   font-size: 1.2rem;
+
+  .header-name, .header-content {
+    cursor: pointer;
+  }
 }

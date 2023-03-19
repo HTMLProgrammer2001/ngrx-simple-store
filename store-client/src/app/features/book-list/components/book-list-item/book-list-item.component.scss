@@ -1,0 +1,47 @@
+.book-item {
+  width: 300px;
+  border: 1px solid #0c0;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.5;
+
+  .book-img {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 280px;
+      height: 280px;
+      object-fit: contain;
+      padding-bottom: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .book-title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+
+  .book-author {
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .book-price {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    line-height: 2;
+  }
+
+  .book-add-to-cart {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: transparentize(#0c0, .8);
+    border: 1px solid #0c0;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}

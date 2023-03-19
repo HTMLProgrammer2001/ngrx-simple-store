@@ -1,0 +1,16 @@
+<div class="books-wrapper" *ngIf="booksState.initialized && !booksState.initializationError">
+  <div class="books-data">
+    <div class="books-list">
+      <app-book-list-item [book]="book" *ngFor="let book of booksState.books"></app-book-list-item>
+    </div>
+
+    <div class="books-load-more" *ngIf="booksState.hasMore && !booksState.isLoading" (click)="loadMore()">Load more
+    </div>
+    <div class="books-loading" *ngIf="booksState.isLoading">Loading...</div>
+  </div>
+
+  <app-book-list-filter [(filter)]="filter" (filterChange)="onFilterChange()"></app-book-list-filter>
+</div>
+
+<div class="books-initialization-error" *ngIf="booksState.initializationError">{{booksState.initializationError}}</div>
+<div class="books-initialization-loading" *ngIf="!booksState.initialized">Initializing...</div>
