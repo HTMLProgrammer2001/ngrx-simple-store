@@ -15,6 +15,7 @@ import {
 } from '../../../state/features/books-list/books-list.selectors';
 import {addCartItem} from '../../../state/features/cart/cart.actions';
 import {BooksListViewModel} from '../types/view-model/books-list-view-model';
+import {selectCartItemCount} from '../../../state/features/cart/cart.selectors';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,10 @@ export class BookListFacadeService {
 
   getBooksListFilterState$(): Observable<any> {
     return this.store.select(selectBooksFilterDataState);
+  }
+
+  getCartItemCount$(bookId: number): Observable<number> {
+    return this.store.select(selectCartItemCount(bookId));
   }
 
   initializeBooksList(): void {
@@ -48,6 +53,12 @@ export class BookListFacadeService {
   }
 
   addItemToCart(book: BooksListViewModel) {
-    this.store.dispatch(addCartItem({bookId: book.id, bookName: book.title, bookPrice: book.price, count: 1}));
+    this.store.dispatch(addCartItem({
+      bookId: book.id,
+      bookName: book.title,
+      bookPrice: book.price,
+      bookPosterUrl: book.posterUrl,
+      count: 1
+    }));
   }
 }

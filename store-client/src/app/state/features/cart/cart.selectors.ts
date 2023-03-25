@@ -10,6 +10,13 @@ export const selectCartState = createFeatureSelector<fromCart.CartState>(
   fromCart.cartFeatureKey
 );
 
+export const selectCartItems = createSelector(selectCartState, cartState => cartState.items);
+
+export const selectCartItemCount = (bookId: number) => createSelector(
+  selectCartState,
+    cartState => cartState.items.find(el => el.bookId === bookId)?.count || 0
+);
+
 export const selectTotalPrice = createSelector(
   selectCartState,
   (cartState) => {

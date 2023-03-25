@@ -7,6 +7,7 @@ export interface CartItem {
   bookId: number;
   bookName: string;
   bookPrice: number;
+  bookPosterUrl: string;
   count: number;
 }
 
@@ -32,7 +33,10 @@ export const cartReducer = createReducer(
     } else {
       return {
         ...state,
-        items: [...state.items, {bookId: action.bookId, bookName: action.bookName, bookPrice: action.bookPrice, count: action.count}]
+        items: [...state.items, {
+          bookId: action.bookId, bookName: action.bookName, bookPrice: action.bookPrice,
+          bookPosterUrl: action.bookPosterUrl, count: action.count
+        }]
       };
     }
   }),

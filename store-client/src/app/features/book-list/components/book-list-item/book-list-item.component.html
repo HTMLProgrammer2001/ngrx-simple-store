@@ -11,5 +11,10 @@
   <div class="book-price">Price: {{book.price | currency:'USD':'symbol':'1.2-2'}}</div>
   <div class="book-mark">{{book.avgMark}} &#11088; ({{book.reviewsCount}})</div>
 
-  <button class="book-add-to-cart" (click)="addToCart()" type="button">Add to cart</button>
+  <button
+    class="book-add-to-cart"
+    type="button"
+    [disabled]="cartItemCount >= book.leftAmount"
+    (click)="addToCart()"
+  >Add to cart</button>
 </div>

@@ -1,2 +1,45 @@
-<div>Cart</div>
-<a [routerLink]="'/checkout'">Checkout</a>
+<div class="cart-wrapper">
+  <ng-container *ngIf="cartItems.length">
+    <div class="cart-list">
+      <div class="cart-item" *ngFor="let cartItem of cartItems">
+        <img
+          [src]="cartItem.bookPosterUrl"
+          [alt]="cartItem.bookName"
+          [width]="100"
+          [height]="100"
+          class="cart-item-photo"
+        />
+
+        <div class="cart-item-details">
+          <div class="cart-item-header">
+            <div class="cart-item-name">{{cartItem.bookName}}</div>
+            <div class="cart-item-delete" (click)="onDeleteCartItem(cartItem)">Delete</div>
+          </div>
+          <div class="cart-item-bottom">
+            <div class="cart-item-count">
+              <button class="cart-item-count-button" [disabled]="cartItem.count === 1"
+                      (click)="decreaseCount(cartItem)">-
+              </button>
+              <input type="number" min="1" max="10" [ngModel]="cartItem.count"
+                     (ngModelChange)="setCartCount(cartItem, $event)"/>
+              <button class="cart-item-count-button" [disabled]="cartItem.count === 10"
+                      (click)="increaseCount(cartItem)">+
+              </button>
+            </div>
+            <div class="cart-item-price">{{(cartItem.bookPrice * cartItem.count) | currency:'USD'}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-item-total-price">
+      Total price: {{totalPrice | currency:'USD'}}
+    </div>
+
+    <a [routerLink]="'/checkout'" class="cart-checkout-link">
+      <button>Checkout</button>
+    </a>
+  </ng-container>
+
+  <div class="cart-list-empty" *ngIf="!cartItems.length">No items</div>
+</div>
