@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {HeaderFacadeService} from '../../services/header.facade.service';
+import {HeaderFacadeService} from './header.facade.service';
 import {ReplaySubject, takeUntil} from 'rxjs';
 import {CartTotalData} from '../../../state/features/cart/cart.selectors';
 

@@ -7,12 +7,12 @@ import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
-import {SharedModule} from './shared/shared.module';
-import {booksListFeatureKey, booksListReducer} from './state/features/books-list/books-list.reducer';
+import {SharedModule} from './common/shared.module';
 import {BooksListEffects} from './state/features/books-list/books-list.effects';
 import {HttpClientModule} from '@angular/common/http';
-import {cartFeatureKey, cartReducer} from './state/features/cart/cart.reducer';
-import {NotFoundComponent} from './shared/components/not-found/not-found.component';
+import {NotFoundComponent} from './common/components/not-found/not-found.component';
+import {saveCartStateMetaReducer} from './state/common/meta-reducers/save-cart-state.meta-reducer';
+import {reducers} from './state';
 
 @NgModule({
   declarations: [
@@ -24,10 +24,8 @@ import {NotFoundComponent} from './shared/components/not-found/not-found.compone
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot({
-      [booksListFeatureKey]: booksListReducer,
-      [cartFeatureKey]: cartReducer
-    }, {
+    StoreModule.forRoot(reducers, {
+      metaReducers: [saveCartStateMetaReducer as any],
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,

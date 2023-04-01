@@ -1,4 +1,4 @@
-import {IdCodeName} from '../../../../shared/types/id-code-name';
+import {IdCodeName} from '../../../../common/types/id-code-name';
 
 export interface BooksDetailsViewModel {
   id: number;

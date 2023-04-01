@@ -2,9 +2,9 @@ import {createReducer, on} from '@ngrx/store';
 import * as BooksActions from './books-list.actions';
 import {BooksListViewModel} from '../../../features/book-list/types/view-model/books-list-view-model';
 import {environment} from '../../../../environments/environment';
-import {IdCodeName} from '../../../shared/types/id-code-name';
+import {IdCodeName} from '../../../common/types/id-code-name';
 
-export const booksListFeatureKey = 'booksList';
+export const booksListFeatureKey = 'booksList' as const;
 
 export interface BooksListState {
   initialized: boolean;

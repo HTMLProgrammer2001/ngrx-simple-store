@@ -5,7 +5,7 @@ import {BookListRoutingModule} from './book-list-routing.module';
 import {ViewBookListComponent} from './views/view-book-list/view-book-list.component';
 import {BookListItemComponent} from './components/book-list-item/book-list-item.component';
 import {BookListFilterComponent} from './components/book-list-filter/book-list-filter.component';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../common/shared.module';
 
 
 @NgModule({

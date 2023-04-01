@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {CartTotalData, selectCartTotalData} from '../../state/features/cart/cart.selectors';
+import {CartTotalData, selectCartTotalData} from '../../../state/features/cart/cart.selectors';
 
 @Injectable({
   providedIn: 'root'

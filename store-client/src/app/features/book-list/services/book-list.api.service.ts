@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environments/environment';
-import {Paginator} from '../../../shared/types/paginator';
+import {Paginator} from '../../../common/types/paginator';
 import {BooksListFilterModel} from '../types/model/books-list-filter-model';
 import {BooksListGetModel} from '../types/model/books-list-get-model';
 import {Observable} from 'rxjs';
-import {PaginatedResponse} from '../../../shared/types/paginated-response';
-import {IdCodeName} from '../../../shared/types/id-code-name';
+import {PaginatedResponse} from '../../../common/types/paginated-response';
+import {IdCodeName} from '../../../common/types/id-code-name';
 
 @Injectable({
   providedIn: 'root'

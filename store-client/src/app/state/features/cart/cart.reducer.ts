@@ -1,7 +1,7 @@
 import {createReducer, on} from '@ngrx/store';
 import * as CartActions from './cart.actions';
 
-export const cartFeatureKey = 'cart';
+export const cartFeatureKey = 'cart' as const;
 
 export interface CartItem {
   bookId: number;

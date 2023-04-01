@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angula
 import {BooksListFilterViewModel} from '../../types/view-model/books-list-filter-view-model';
 import {BookListFacadeService} from '../../services/book-list.facade.service';
 import {ReplaySubject, takeUntil} from 'rxjs';
-import {IdCodeName} from '../../../../shared/types/id-code-name';
+import {IdCodeName} from '../../../../common/types/id-code-name';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({

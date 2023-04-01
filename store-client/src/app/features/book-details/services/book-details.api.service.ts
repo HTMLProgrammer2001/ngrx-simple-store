@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environments/environment';
-import {Paginator} from '../../../shared/types/paginator';
+import {Paginator} from '../../../common/types/paginator';
 import {Observable} from 'rxjs';
-import {PaginatedResponse} from '../../../shared/types/paginated-response';
+import {PaginatedResponse} from '../../../common/types/paginated-response';
 import {BooksDetailsGetModel} from '../types/model/books-details-get-model';
 import {BooksReviewGetModel} from '../types/model/books-review-get-model';
 

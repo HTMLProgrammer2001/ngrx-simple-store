@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {CheckoutRoutingModule} from './checkout-routing.module';
 import {ViewCheckoutComponent} from './views/view-checkout/view-checkout.component';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../common/shared.module';
 
 
 @NgModule({

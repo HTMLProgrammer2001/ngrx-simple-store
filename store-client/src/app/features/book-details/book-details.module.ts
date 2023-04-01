@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {BookDetailsRoutingModule} from './book-details-routing.module';
 import {ViewBookDetailsComponent} from './views/view-book-details/view-book-details.component';
-import {SharedModule} from '../../shared/shared.module';
+import {SharedModule} from '../../common/shared.module';
 
 
 @NgModule({

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {Paginator} from '../../../shared/types/paginator';
+import {Paginator} from '../../../common/types/paginator';
 import {BooksListFilterViewModel} from '../types/view-model/books-list-filter-view-model';
 import {
   clearBooksList, initializeBooksList,

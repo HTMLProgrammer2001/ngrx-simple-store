@@ -1,9 +1,9 @@
 import {createAction, props} from '@ngrx/store';
 import {BooksListViewModel} from '../../../features/book-list/types/view-model/books-list-view-model';
-import {PaginatedResponse} from '../../../shared/types/paginated-response';
-import {Paginator} from '../../../shared/types/paginator';
+import {PaginatedResponse} from '../../../common/types/paginated-response';
+import {Paginator} from '../../../common/types/paginator';
 import {BooksListFilterViewModel} from '../../../features/book-list/types/view-model/books-list-filter-view-model';
-import {IdCodeName} from '../../../shared/types/id-code-name';
+import {IdCodeName} from '../../../common/types/id-code-name';
 
 export const initializeBooksList = createAction(
   '[Books list] Initializing book-list list'
