@@ -26,9 +26,7 @@ export class BookListFilterComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.formGroup = this.fb.group({
-      title: [this.filter.title, {
-        updateOn: 'blur'
-      }],
+      title: [this.filter.title, null, null, {updateOn: 'blur'}],
       available: [this.filter.available],
       priceFrom: [this.filter.priceFrom, [Validators.min(0), Validators.max(9999)]],
       priceTo: [this.filter.priceTo, [Validators.min(0), Validators.max(9999)]],

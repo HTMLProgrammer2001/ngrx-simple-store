@@ -51,3 +51,14 @@ export interface ReviewResponse {
   mark: number;
   date: string;
 }
+
+export interface IResponse<T> {
+  status: ResponseStatus;
+  data: T;
+  errors: Array<string>;
+}
+
+export enum ResponseStatus {
+  Ok = 'Ok',
+  Failed = 'Failed'
+}

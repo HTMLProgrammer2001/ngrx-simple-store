@@ -7,6 +7,7 @@ import {BooksListGetModel} from '../types/model/books-list-get-model';
 import {Observable} from 'rxjs';
 import {PaginatedResponse} from '../../../common/types/paginated-response';
 import {IdCodeName} from '../../../common/types/id-code-name';
+import {IResponse} from '../../../common/types/response';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class BookListApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getBooksList(paginator: Paginator, filter: BooksListFilterModel): Observable<PaginatedResponse<BooksListGetModel>> {
+  getBooksList(paginator: Paginator, filter: BooksListFilterModel): Observable<IResponse<PaginatedResponse<BooksListGetModel>>> {
     const params: Record<string, any> = {
       ...paginator,
       ...filter
@@ -27,14 +28,14 @@ export class BookListApiService {
       }
     });
 
-    return this.httpClient.get<PaginatedResponse<BooksListGetModel>>(`${environment.backendUrl}/books`, {params});
+    return this.httpClient.get<IResponse<PaginatedResponse<BooksListGetModel>>>(`${environment.backendUrl}/books`, {params});
   }
 
-  getAuthors(): Observable<Array<IdCodeName>> {
-    return this.httpClient.get<Array<IdCodeName>>(`${environment.backendUrl}/authors`);
+  getAuthors(): Observable<IResponse<Array<IdCodeName>>> {
+    return this.httpClient.get<IResponse<Array<IdCodeName>>>(`${environment.backendUrl}/authors`);
   }
 
-  getGenres(): Observable<Array<IdCodeName>> {
-    return this.httpClient.get<Array<IdCodeName>>(`${environment.backendUrl}/genres`);
+  getGenres(): Observable<IResponse<Array<IdCodeName>>> {
+    return this.httpClient.get<IResponse<Array<IdCodeName>>>(`${environment.backendUrl}/genres`);
   }
 }

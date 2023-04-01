@@ -16,4 +16,5 @@ import {SharedModule} from '../../common/shared.module';
     CartRoutingModule
   ]
 })
-export class CartModule { }
+export class CartModule {
+}

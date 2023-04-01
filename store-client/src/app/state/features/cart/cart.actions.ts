@@ -15,3 +15,7 @@ export const deleteCartItem = createAction(
   '[Cart] Delete item',
   props<{bookId: number}>()
 );
+
+export const resetCartItem = createAction(
+  '[Cart] Reset'
+);

@@ -29,3 +29,9 @@ export interface ReviewModel {
   mark: number;
   date: string;
 }
+
+export interface CheckoutPostModel {
+  cartItems: Array<{bookId: number, count: number}>;
+  email: string;
+  name: string;
+}

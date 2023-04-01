@@ -1,3 +1,16 @@
 <div class="checkout-wrapper">
-  Checkout
+  <app-cart-items
+    [cartItems]="checkoutViewModel.cartItems"
+    [totalPrice]="checkoutViewModel.totalPrice"
+    [editable]="false"
+  ></app-cart-items>
+
+  <ng-container *ngIf="checkoutViewModel.cartItems.length">
+    <form [formGroup]="formGroup" (ngSubmit)="onCheckout()">
+      <input type="email" placeholder="Email" formControlName="email">
+      <input type="text" placeholder="Name" formControlName="name">
+
+      <button type="submit">Checkout</button>
+    </form>
+  </ng-container>
 </div>

@@ -47,5 +47,6 @@ export const cartReducer = createReducer(
   on(CartActions.deleteCartItem, (state, action) => ({
     ...state,
     items: state.items.filter(el => el.bookId !== action.bookId)
-  }))
+  })),
+  on(CartActions.resetCartItem, (state, action) => ({...initialState}))
 );

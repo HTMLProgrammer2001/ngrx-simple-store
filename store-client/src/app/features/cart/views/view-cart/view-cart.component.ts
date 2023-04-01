@@ -39,14 +39,6 @@ export class ViewCartComponent implements OnInit, OnDestroy {
     this.cartFacadeService.deleteCartItem(cartItem.bookId);
   }
 
-  decreaseCount(cartItem: CartItem) {
-    this.cartFacadeService.setCartItemCount(cartItem.bookId, cartItem.count - 1);
-  }
-
-  increaseCount(cartItem: CartItem) {
-    this.cartFacadeService.setCartItemCount(cartItem.bookId, cartItem.count + 1);
-  }
-
   setCartCount(cartItem: CartItem, count: number) {
     this.cartFacadeService.setCartItemCount(cartItem.bookId, count);
   }

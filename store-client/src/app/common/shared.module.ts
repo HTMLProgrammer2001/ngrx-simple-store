@@ -5,13 +5,15 @@ import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {LayoutComponent} from './components/layout/layout.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CartItemsComponent} from './components/cart-items/cart-items.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    CartItemsComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FooterComponent,
     FormsModule,
     ReactiveFormsModule,
+    CartItemsComponent,
   ]
 })
 export class SharedModule {

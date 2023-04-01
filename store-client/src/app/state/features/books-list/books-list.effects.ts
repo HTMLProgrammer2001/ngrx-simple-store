@@ -4,13 +4,14 @@ import {catchError, map, switchMap} from 'rxjs/operators';
 import * as BooksActions from './books-list.actions';
 import {
   initializeBooksListFailure,
-  initializeBooksListSuccess, loadBooksList,
+  initializeBooksListSuccess,
+  loadBooksList,
   loadBooksListFailure,
   loadBooksListSuccess
 } from './books-list.actions';
 import {BookListApiService} from '../../../features/book-list/services/book-list.api.service';
 import {BookListMapperService} from '../../../features/book-list/services/book-list.mapper.service';
-import {forkJoin, from, of, takeUntil} from 'rxjs';
+import {forkJoin, of, takeUntil} from 'rxjs';
 import {environment} from '../../../../environments/environment';
 
 
@@ -23,8 +24,8 @@ export class BooksListEffects {
         this.bookApiService.getBooksList(action.paginator, this.bookMapperService.booksListFilterModelToViewModel(action.filter))
           .pipe(
             map(resp => ({
-              ...resp,
-              responseList: resp.responseList.map(el => this.bookMapperService.booksListModelToViewModel(el))
+              ...resp.data,
+              responseList: resp.data.responseList.map(el => this.bookMapperService.booksListModelToViewModel(el))
             })),
             map(data => loadBooksListSuccess({data})),
             catchError(err => of(loadBooksListFailure({error: err.message}))),
@@ -39,8 +40,8 @@ export class BooksListEffects {
       ofType(BooksActions.initializeBooksList),
       switchMap((action) =>
         forkJoin({
-          authors: this.bookApiService.getAuthors(),
-          genres: this.bookApiService.getGenres()
+          authors: this.bookApiService.getAuthors().pipe(map(resp => resp.data)),
+          genres: this.bookApiService.getGenres().pipe(map(resp => resp.data))
         }).pipe(
           switchMap(resp => of(initializeBooksListSuccess(resp), loadBooksList({
             paginator: {page: 1, size: environment.defaultPageSize},
