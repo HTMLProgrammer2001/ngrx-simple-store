@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { HeaderFacadeService } from './header.facade.service';
+import {HeaderFacadeService} from './header.facade.service';
 
 describe('HeaderFacadeService', () => {
   let service: HeaderFacadeService;

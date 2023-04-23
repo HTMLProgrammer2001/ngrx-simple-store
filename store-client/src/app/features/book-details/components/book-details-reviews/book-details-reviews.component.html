@@ -1,0 +1,20 @@
+<section class="book-details-reviews-wrapper">
+  <h2>Reviews (Total: {{reviewState.totalElements}})</h2>
+
+  <div class="book-details-reviews-list">
+    <div class="book-details-review" *ngFor="let review of reviewState.reviews">
+      <div class="book-details-review-author">{{review.author}} ({{review.mark}} &#11088;)</div>
+      <div class="book-details-review-сontent">{{review.content}}</div>
+      <hr>
+    </div>
+  </div>
+
+  <button
+    *ngIf="reviewState.hasMore && !reviewState.isLoading"
+    (click)="loadMore()"
+    class="book-details-reviews-load-more"
+  >Load more</button>
+
+  <div class="book-details-reviews-empty" *ngIf="!reviewState.isLoading && !reviewState.reviews.length">No reviews yet</div>
+  <div class="book-details-reviews-loading" *ngIf="reviewState.isLoading">Loading...</div>
+</section>

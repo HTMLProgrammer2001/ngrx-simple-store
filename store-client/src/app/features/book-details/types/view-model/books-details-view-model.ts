@@ -11,4 +11,5 @@ export interface BooksDetailsViewModel {
   avgMark: number;
   author: IdCodeName;
   genres: Array<IdCodeName>;
+  genresString: string;
 }

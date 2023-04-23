@@ -1,1 +1,19 @@
-Details {{bookId}}
+<div class="book-details-wrapper">
+  <ng-container *ngIf="bookDetailsState.book">
+    <app-book-details-info
+      [bookDetails]="bookDetailsState.book"
+      [cartItemCount]="cartItemCount"
+      (addToCart)="addToCart()"
+    ></app-book-details-info>
+
+    <hr>
+
+    <app-book-details-reviews
+      [reviewState]="bookReviewsState"
+      (loadPage)="loadReviewPage($event)"
+    ></app-book-details-reviews>
+  </ng-container>
+
+  <div class="book-details-loading" *ngIf="bookDetailsState.isLoading">Loading...</div>
+  <div class="book-details-error" *ngIf="bookDetailsState.error">{{bookDetailsState.error}}</div>
+</div>

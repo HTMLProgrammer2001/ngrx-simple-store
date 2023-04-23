@@ -1,4 +1,4 @@
-import {MetaReducer, INIT} from '@ngrx/store';
+import {INIT, MetaReducer} from '@ngrx/store';
 import {StoreService} from '../../../common/services/store.service';
 import {State} from '../../index';
 

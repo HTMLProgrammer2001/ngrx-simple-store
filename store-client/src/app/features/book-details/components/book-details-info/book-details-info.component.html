@@ -1,0 +1,25 @@
+<section class="book-details">
+  <img
+    class="book-details-img"
+    [src]="bookDetails.posterUrl"
+    [title]="bookDetails.title"
+    [alt]="bookDetails.title"
+  >
+
+  <div class="book-details-data">
+    <div class="book-details-title">{{bookDetails.title}}</div>
+    <div class="book-details-author">by {{bookDetails.author?.name}}</div>
+    <div class="book-details-genres">Genres: {{bookDetails.genresString}}</div>
+    <div class="book-pages">Pages: {{bookDetails.pages}}</div>
+    <div class="book-left-amount">Left amount: {{bookDetails.leftAmount}}</div>
+    <div class="book-price">Price: {{bookDetails.price | currency:'USD':'symbol':'1.2-2'}}</div>
+    <div class="book-mark">{{bookDetails.avgMark}} &#11088; ({{bookDetails.reviewsCount}})</div>
+
+    <button
+      class="book-details-add-to-cart"
+      type="button"
+      [disabled]="cartItemCount >= bookDetails.leftAmount"
+      (click)="addToCart.emit()"
+    >Add to cart</button>
+  </div>
+</section>

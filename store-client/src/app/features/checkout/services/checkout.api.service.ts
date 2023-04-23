@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {CheckoutBodyModel} from '../types/model/checkout-body-model';
-import {Observable, of} from 'rxjs';
-import {IdCodeName} from '../../../common/types/id-code-name';
+import {Observable} from 'rxjs';
 import {environment} from '../../../../environments/environment';
 import {IResponse} from '../../../common/types/response';
 

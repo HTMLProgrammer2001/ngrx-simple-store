@@ -1,5 +1,5 @@
 import * as fromCart from './cart.reducer';
-import { selectCartState } from './cart.selectors';
+import {selectCartState} from './cart.selectors';
 
 describe('Cart Selectors', () => {
   it('should select the feature state', () => {

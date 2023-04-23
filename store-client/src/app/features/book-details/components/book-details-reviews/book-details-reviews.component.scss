@@ -1,0 +1,22 @@
+.book-details-reviews-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .book-details-reviews-list {
+    display: flex;
+    flex-direction: column;
+
+    .book-details-review-author {
+      font-weight: bold;
+    }
+  }
+
+  .book-details-reviews-load-more {
+    align-self: center;
+    margin: 10px;
+  }
+
+  .book-details-reviews-empty, .book-details-reviews-loading {
+    text-align: center;
+  }
+}

@@ -14,6 +14,8 @@ import {CheckoutEffects} from './state/features/checkout/checkout.effects';
 import {NotFoundComponent} from './common/components/not-found/not-found.component';
 import {saveCartStateMetaReducer} from './state/common/meta-reducers/save-cart-state.meta-reducer';
 import {reducers} from './state';
+import {BookDetailsEffects} from './state/features/book-details/book-details.effects';
+import {BookReviewsEffects} from './state/features/book-reviews/book-reviews.effects';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import {reducers} from './state';
         strictActionTypeUniqueness: true,
       }
     }),
-    EffectsModule.forRoot([BooksListEffects, CheckoutEffects]),
+    EffectsModule.forRoot([BooksListEffects, CheckoutEffects, BookDetailsEffects, BookReviewsEffects]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],

@@ -3,7 +3,8 @@ import {Store} from '@ngrx/store';
 import {Paginator} from '../../../common/types/paginator';
 import {BooksListFilterViewModel} from '../types/view-model/books-list-filter-view-model';
 import {
-  clearBooksList, initializeBooksList,
+  clearBooksList,
+  initializeBooksList,
   loadBooksList,
   resetBooksListState
 } from '../../../state/features/books-list/books-list.actions';

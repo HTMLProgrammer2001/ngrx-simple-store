@@ -4,8 +4,7 @@
       <app-book-list-item [book]="book" *ngFor="let book of booksState.books"></app-book-list-item>
     </div>
 
-    <div class="books-load-more" *ngIf="booksState.hasMore && !booksState.isLoading" (click)="loadMore()">Load more
-    </div>
+    <div class="books-load-more" *ngIf="booksState.hasMore && !booksState.isLoading" (click)="loadMore()">Load more</div>
     <div class="books-loading" *ngIf="booksState.isLoading">Loading...</div>
   </div>
 

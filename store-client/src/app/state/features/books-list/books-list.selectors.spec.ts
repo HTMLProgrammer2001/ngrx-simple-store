@@ -1,5 +1,5 @@
 import * as fromBooks from './books-list.reducer';
-import { selectBooksListState } from './books-list.selectors';
+import {selectBooksListState} from './books-list.selectors';
 
 describe('Books List Selectors', () => {
   it('should select the feature state', () => {
